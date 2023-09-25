@@ -30,7 +30,7 @@ function main()
     flag = false
     side = Nord
     while !flag
-        flag = go!(r, side, round(k/2+0.1))
+        flag = go!(r, side, Int(ceil(k/2)))
         k+=1
         side = inverse90(side)
     end
