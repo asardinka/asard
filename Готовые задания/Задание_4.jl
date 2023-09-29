@@ -10,8 +10,8 @@ using HorizonSideRobots
 
 include("Functions.jl")
 
-function Cross_on_start()
-    r = Robot("map_1.sit";animate=true)
+function Cross_on_start(r)
+    
     
     for s_1 in (Nord, Sud)
         for s_2 in (West, Ost)
@@ -22,4 +22,5 @@ function Cross_on_start()
     sleep(300) 
 end
 
-Cross_on_start()
+r = Robot("map_1.sit";animate=true)
+Cross_on_start(r)

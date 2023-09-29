@@ -23,8 +23,8 @@ function go!(r,side, num)
     return false
 end
 
-function main()
-    r = Robot("map_3.sit", animate=true)
+function main(r)
+    
 
     k = 1
     flag = false
@@ -37,5 +37,5 @@ function main()
     sleep(10)
 end
 
-
-main()
+r = Robot("map_3.sit", animate=true)
+main(r)

@@ -9,8 +9,8 @@ using HorizonSideRobots
 
 include("Functions.jl")
 
-function Plus()
-    r = Robot("map_1.sit";animate=true)
+function Plus(r)
+   
 
     for Side in (Nord, Ost, Sud, West)
         full_move!(r,Side; mark = true, rev = true)
@@ -19,4 +19,5 @@ function Plus()
     sleep(300)  
 end
 
-Plus()
+r = Robot("map_1.sit";animate=true)
+Plus(r)

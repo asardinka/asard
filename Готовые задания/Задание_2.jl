@@ -10,7 +10,7 @@ using HorizonSideRobots
 
 include("Functions.jl")
 
-function Perimetr()
+function Perimetr(r)
     r = Robot("map_1.sit";animate=true)
     start_cord = start!(r, vozvrat=false)
 
@@ -22,4 +22,5 @@ function Perimetr()
     sleep(300) 
 end
 
-Perimetr()
+r = Robot("map_1.sit";animate=true)
+Perimetr(r)

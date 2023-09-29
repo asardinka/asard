@@ -17,8 +17,8 @@ function move_count!(r, side)
     return m
 end
 
-function main()
-    r = Robot("mark.sit", animate=true)
+function main(r)
+    
     s = Ost
     ans = 0
     k = move_count!(r, s)
@@ -33,4 +33,5 @@ function main()
     return ans
 end
 
+r = Robot("mark.sit", animate=true)
 println(main())

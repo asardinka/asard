@@ -10,9 +10,9 @@ using HorizonSideRobots
 include("Functions.jl")
 
 
-function Doubl_Perimetr()
+function Doubl_Perimetr(r)
 
-    r = Robot("map_2.sit";animate=true)
+    
 
     start_cord = start!(r, vozvrat=false)
 
@@ -35,5 +35,5 @@ function Doubl_Perimetr()
     sleep(300)
 end
 
-
-Doubl_Perimetr()
+r = Robot("map_2.sit";animate=true)
+Doubl_Perimetr(r)

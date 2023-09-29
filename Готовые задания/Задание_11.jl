@@ -32,8 +32,8 @@ function is_border_in_row!(r, side, side_n)
 end
 
 
-function main()
-    r = Robot("peregorodki.sit", animate=false)
+function main(r)
+    
     start_cord = start!(r, vozvrat=false)
     side = Nord
     side_n = Ost
@@ -52,6 +52,8 @@ function main()
     return sum
 end
 
-println(main())
+
+r = Robot("peregorodki.sit", animate=false)
+println(main(r))
 
 # 41 перегородка

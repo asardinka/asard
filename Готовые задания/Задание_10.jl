@@ -39,9 +39,9 @@ function Chess(r)
 end
 
 
-function main()
+function main(r)
     #Клетки промаркерованы в шахматном порядке
-    r = Robot("map_1.sit", animate=true)
+    
 
     start_cord = start!(r, vozvrat=false)
     
@@ -51,5 +51,5 @@ function main()
     sleep(300) 
 end
 
-
-main()
+r = Robot("map_1.sit", animate=true)
+main(r)

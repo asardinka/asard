@@ -10,9 +10,9 @@ using HorizonSideRobots
 
 include("Functions.jl")
 
-function main()
-    r = Robot(animate=true)
+function main(r)
     zmeya!(r)
 end
 
-main()
+r = Robot(animate=true)
+main(r)

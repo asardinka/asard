@@ -154,4 +154,74 @@ function find_in_row!(r, side)
     return isborder(r, Nord)
 end
 
+function North!(r)
+    if !isborder(r,Nord)
+        move!(r, Nord)
+        return true
+    else
+        return false
+    end
+end
 
+function if_mark(r, k, shift)
+    if k%2==0 && !shift
+        putmarker!(r)
+    elseif k%2!=0 && shift
+        putmarker!(r)
+    end
+end
+
+function mark_chess(r, side; shift = false)
+    k = 0
+    while !isborder(r, side)
+        if_mark(r, k, shift)
+        move!(r, side)
+        k+=1
+    end
+    if_mark(r, k, shift)
+    if !North!(r)
+        return false
+    end
+    k+=1
+    while !isborder(r,inverse(side))
+        if_mark(r, k, shift)
+        move!(r, inverse(side))
+        k+=1
+    end
+    if_mark(r, k, shift)
+    return North!(r)
+end
+
+function Chess!(r; shift=false)
+    run = true
+    while run
+        run = mark_chess(r, Ost, shift=shift)
+    end
+end
+
+function is_border_in_row!(r, side, side_n)
+    k, c, shag = 0, 0, 0
+    while !isborder(r, side_n)
+        flag = c
+        if isborder(r, side)
+            c+=1
+        else
+            c = 0
+        end
+        if c == 0 && flag >0
+            k+=1
+        end        
+        move!(r, side_n)
+        shag +=1
+    end
+    flag = c
+    if isborder(r, side)
+        c+=1
+    else
+        c = 0
+    end
+    if c == 0 && flag >0
+        k+=1
+    end   
+    return shag, k, c
+end

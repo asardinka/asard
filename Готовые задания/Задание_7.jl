@@ -21,8 +21,8 @@ end
 
 
 
-function main()
-    r = Robot("Peregorodka.sit", animate = true)
+function main(r)
+    
     k = 1
     run = true
     while run 
@@ -37,4 +37,5 @@ function main()
     sleep(20)
 end
 
-main()
+r = Robot("Peregorodka.sit", animate = true)
+main(r)
