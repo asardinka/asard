@@ -1,5 +1,7 @@
 using HorizonSideRobots
 
+include("Functions.jl")
+
 
 inverse(s::HorizonSide) = HorizonSide(mod(Int(s)+2, 4))
 inverse90(s::HorizonSide) = HorizonSide(mod(Int(s)+1, 4))
@@ -48,7 +50,7 @@ function move_num!(stop_condidion::Function, robot, side, num)
     return !stop_condidion()
 end
 
-function shatl!(stop_condition::Function, robot, start_side)
+function shuttle!(stop_condition::Function, robot, start_side)
     k = 1
     s = start_side
     while !stop_condition()

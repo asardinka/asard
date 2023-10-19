@@ -225,3 +225,37 @@ function is_border_in_row!(r, side, side_n)
     end   
     return shag, k, c
 end
+
+
+function full_start!(r)
+    cord = []
+    side = West
+    while !isborder(r, West) || !isborder(r, Sud)
+        push!(cord, full!(r, side))
+        
+        if side == Sud
+            side = West
+        else
+            side = Sud
+        end
+        
+    end
+    if length(cord)%2 !=0
+        push!(cord, 0)
+    end
+    return cord
+end
+
+function full_end!(r, cord)
+    side = Nord
+    for x in reverse(cord)
+        move_num!(r, side, x)
+
+        if side == Nord
+            side = Ost
+        else
+            side = Nord
+        end
+
+    end
+end
