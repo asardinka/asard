@@ -1,0 +1,38 @@
+frame_size:
+5 5
+coefficient:
+2.4
+is_framed:
+true
+robot_position:
+5 1
+temperature_map:
+-17 175 433 -266 -23 -103 222 234 264 -119 37 258 353 -83 371 409 276 97 411 -114 405 -96 -125 -220 -230
+markers_map:
+
+borders_map:
+
+0 2
+
+
+
+
+0 2
+3
+1 0
+0
+2
+3
+
+3
+
+
+
+
+3
+1
+
+0 2
+1
+
+
